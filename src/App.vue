@@ -118,7 +118,7 @@
   </main>
 </template>
 
-<style >
+<style>
 * {
   margin: 0;
   padding: 0;
@@ -200,5 +200,75 @@ form input[type="number"]{
   flex: 1 1 0%;
   padding: 1rem 1.5rem;
   font-size: 1.25rem;
+}
+
+form input[type="submit"]{
+  appearance: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: hotpink;
+
+  padding: 0.5rem 1rem;
+
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  transition: 200ms linear;
+  border-left: 3px solid transparent;
+}
+
+form input[type="submit"]:hover{
+  background-color: white;
+  color: hotpink;
+  border-left-color: hotpink;
+}
+
+.canvas-box{
+  width: 100%;
+  max-width: 720px;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.weight-history ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.weight-history ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.weight-history ul li:nth-child(even){
+  background-color: #dfdfdf;
+}
+
+.weight-history ul li:hover{
+  background-color: #f8f8f8;
+}
+
+.weight-history ul li:last-of-type{
+  border-bottom: none;
+}
+
+.weight-history ul li span{
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-right: 1rem;
+}
+
+.weight-history ul li small{
+  color: #888;
+  font-style: italic;
 }
 </style>
