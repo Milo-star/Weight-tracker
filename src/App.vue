@@ -23,8 +23,32 @@
 
   watch(weights, newWeights => {
     const ws = [...newWeights]
-
-    console.log(ws);
+    nextTick(() => {
+      weightChart.value = new Chart(weightChartE1.value.getContext('2d'), {
+        type:'line',
+        data: {
+          labels: ws
+            .sort((a, b) => a.date - b.date)
+            .map(w => new Date(w.date).toLocaleDateString()),
+          datasets: [
+            {
+              label: 'Weight',
+              data: ws 
+                .sort((a, b) => a.date - b.date)
+                .map(w => w.weight),
+              backgroundColor: 'rgba(255, 105, 180, 0.2)',
+              borderColor: 'rgb(255, 105, 180)',
+              borderWidth: 1,
+              fill: true
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+        }
+      })
+    })
   }, {deep: true})
 
 </script>
