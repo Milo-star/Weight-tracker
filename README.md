@@ -1,5 +1,7 @@
 # Weight-Tracker
 
+![Logo](/public/image.png)
+
 Small project carried out in a few hours with the use of vue.js, ChartJs.
 The goal of this project is to insert your weight every day and see the evolution
 
