@@ -21,6 +21,12 @@
     })
   }
 
+  watch(weights, newWeights => {
+    const ws = [...newWeights]
+
+    console.log(ws);
+  }, {deep: true})
+
 </script>
 
 <template>
@@ -52,8 +58,12 @@
         <h2>Weight history</h2>
         <ul>
           <li v-for="weight in weights">
-            <span>{{ weight.weight }}kg</span>
-            <small>{{ new Date(weight.date).toLocaleDateString() }}</small>
+            <span>
+              {{ weight.weight }}kg
+            </span>
+            <small>
+              {{ new Date(weight.date).toLocaleDateString() }}
+            </small>
           </li>
         </ul>
       </div>
